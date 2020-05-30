@@ -5,13 +5,8 @@ describe('Port', () => {
     it('can be instantiated', () => {
         expect(new Port).toBeInstanceOf(Object);
     });
-});
-
-describe('setSail', () => {
-    it('changes the current port value to falsy', () => {
+    it('has a name', () => {
         const port = new Port('Dover');
-        port.setSail();
-
-        expect(port.currentPort).toBeFalsy();
+        expect(port.name).toBe('Dover');
     });
 });

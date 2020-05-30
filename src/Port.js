@@ -1,9 +1,9 @@
 class Port {
-    constructor(currentPort) {
-        this.currentPort = currentPort;
+    constructor(name) {
+        this.name = name;
     };
     setSail () {
-        this.currentPort = "";
+        this.name = "";
     };
 };
 
