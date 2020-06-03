@@ -10,9 +10,9 @@ describe('Itinerary', () => {
         let itinerary;
 
         beforeEach(() => {
-            dover = new Port('Dover');
-            calais = new Port('Calais');
-            itinerary = new Itinerary([dover, calais])
+            dover = jest.fn();
+            calais = jest.fn();
+            itinerary = new Itinerary([dover, calais]);
         });
 
     

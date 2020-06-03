@@ -9,13 +9,13 @@ describe('Port', () => {
 
         beforeEach(() => {
             port = new Port('Dover');
-            ship = {};
+            ship = jest.fn();
         });
 
         it('can be instantiated', () => {
             expect(new Port()).toBeInstanceOf(Object);
         });
-        
+
         it('has a name', () => {
             expect(port.name).toBe('Dover');
         });
