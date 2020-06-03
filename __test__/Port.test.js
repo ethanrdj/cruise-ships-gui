@@ -2,20 +2,35 @@
 const Port = require('../src/Port.js');
 
 describe('Port', () => {
-    it('can be instantiated', () => {
-        expect(new Port()).toBeInstanceOf(Object);
-    });
-    it('has a name', () => {
-        const port = new Port('Dover');
-        expect(port.name).toBe('Dover');
-    });
+    describe('with ships and itineraries', () => {
 
-    it('can add a ship',  () => {
-        const port = new Port('Dover');
-        const ship = {};
+        let port;
+        let ship;
 
-        port.addShip(ship);
+        beforeEach(() => {
+            port = new Port('Dover');
+            ship = {};
+        });
 
-        expect(port.ships).toContain(ship);
+        it('can be instantiated', () => {
+            expect(new Port()).toBeInstanceOf(Object);
+        });
+        
+        it('has a name', () => {
+            expect(port.name).toBe('Dover');
+        });
+
+        it('can add a ship',  () => {
+            port.addShip(ship);
+
+            expect(port.ships).toContain(ship);
+        });
+
+        it('can remove a ship', () => {
+            port.addShip(ship);
+            port.removeShip(ship);
+
+            expect(port.ships).not.toContain(ship);
+        });
     });
 });
