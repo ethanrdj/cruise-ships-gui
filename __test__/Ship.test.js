@@ -53,4 +53,4 @@ describe('Ship', () => {
             expect(dover.ships).toContain(ship);
         });
     });
-});
+})
