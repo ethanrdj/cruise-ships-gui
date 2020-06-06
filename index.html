@@ -13,6 +13,8 @@
   <div id="viewport">
     <div id="ports"
     ></div>
+    <div id="ship"
+    ></div>
   </div>
 
   <script src="src/controller.js"></script>
@@ -28,8 +30,10 @@
       new Port('Amber Cove')
     ]);
 
+    const ship = new Ship(itinerary);
+
     controller.renderPorts(itinerary.ports);
-    
+    controller.renderShip(ship);
   </script>
 </body>
 </html>
